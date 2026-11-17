@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PREVIEW ONLY · GVC Broker Roster CRM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="preview-banner">
+    <strong>PREVIEW ONLY</strong>
+    <span> — This is a separate copy of the approved broker roster with Recruit Central-style pipeline tools. It is not the live spruce-pilot desk. Nothing here is published, shared, or sent. localStorage is for this preview only and is not the system of record.</span>
+  </div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">GVC</div>
+      <div>
+        <p>Wholesale / TPO · Preview</p>
+        <h1>Broker Roster CRM</h1>
+      </div>
+    </div>
+    <nav>
+      <a href="#/pipeline" data-view="pipeline">Pipeline</a>
+      <a href="#/roster" data-view="roster">Roster</a>
+      <a href="#/due" data-view="due">Due / Overdue</a>
+    </nav>
+    <div class="top-actions">
+      <button type="button" class="btn ghost" id="reset-preview">Reset preview seed</button>
+    </div>
+  </header>
+  <div id="app"><div class="wrap muted">Loading preview seed…</div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <div class="modal-back" id="reset-modal">
+    <div class="modal">
+      <h3>Reset this preview?</h3>
+      <p>This clears preview localStorage and restores the Oct 22, 2026 seed. It does not touch the live roster.</p>
+      <div class="actions">
+        <button type="button" class="btn" id="reset-cancel">Cancel</button>
+        <button type="button" class="btn danger" id="reset-ok">Reset preview</button>
+      </div>
+    </div>
+  </div>
+  <script src="seed.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
