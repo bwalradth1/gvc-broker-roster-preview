@@ -2,10 +2,10 @@
   "meta": {
     "title": "GVC Broker Roster CRM",
     "previewOnly": true,
-    "generatedAt": "2026-11-17T16:45:00-05:00",
+    "generatedAt": "2026-11-18T08:14:00-05:00",
     "timezone": "America/Indianapolis",
     "timezoneLabel": "ET (America/Indianapolis)",
-    "today": "2026-11-17",
+    "today": "2026-11-18",
     "source": "Seeded read-only from copies of tpo_approved_brokers_2026-10-22.csv/.xlsx, tpo_broker_contacts_2026-10-22.csv, Casey\u2019s Nov 17 workbook (new_brokers.csv, new_broker_contacts_with_title.csv, new_broker_social.csv), ranked 3-month RETR extracts (including Omega ranked from /workspace/retr/omega_1532157.csv and Nov 11 pulls for Black Wall Street, Bravo, Coast2Coast, E Mortgage, and RMI), retr_office_2026.csv, and retr_lo_2026.csv. The live spruce-pilot roster, its build chat, its endpoints, and the original Oct 22 /workspace feed files were not modified. The Omega raw export was not copied into this preview because it includes borrower purchase fields.",
     "seedingRule": "Every shop on the Oct 22, 2026 approved broker list and Casey\u2019s Nov 17, 2026 workbook (9 added shops) is seeded at pipeline stage Approved. A shop stays at Approved even when 3-month (or YTD) RETR production is on file, because these files do not show any GVC loan, activation, or first-submission event. No shop is seeded as Prospect, Activated, Active, or Dormant. The sheet note \u201cCreds went out\u201d is stored as a status note and drives the next-step text; it does not advance the stage. Next steps, due dates, and opening activity rows are preview-seeded so the due/overdue and activity views have something to show. They are not historical AE commitments. Clear them or replace them before this copy would ever replace the live roster.",
     "licensedStatesNote": "GVC is licensed in 27 states (gvcmortgage.com state-licenses page plus GA, which Brock confirmed is live): AL, AR, AZ, CO, CT, FL, GA, IL, IN, KS, KY, LA, MA, MI, MO, MS, NC, OH, OK, OR, PA, RI, SC, TN, TX, VA, WI. CA, NJ, WA, NV, NH, MD, UT and others are not licensed.",
@@ -383,7 +383,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 70,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1181151",
@@ -438,7 +482,51 @@
       "loansStateTotal3mo": 99,
       "pctKept": 82.2,
       "topBackedOut": "WA $6.1M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": "2026-11-03",
+        "firstFileSubmittedIsSample": true,
+        "turnTimePromise": "SAMPLE / PLACEHOLDER: 48-hour initial UW decision / 24-hour condition review \u2014 not an agreed promise",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": false,
+        "daysSinceApproval": 84,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": "2026-11-03",
+            "updateSent": true,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": "2026-11-12",
+            "updateSent": true,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2445761",
@@ -499,7 +587,51 @@
       "loansStateTotal3mo": 33,
       "pctKept": 100.0,
       "topBackedOut": null,
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 2,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2026156",
@@ -560,7 +692,51 @@
       "loansStateTotal3mo": 0,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "Black Wall Street 3-month RETR production is $0, so licensed 3-month volume is $0. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Black Wall Street 3-month RETR production is $0, so licensed 3-month volume is $0. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 7,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2610544",
@@ -626,7 +802,51 @@
       "loansStateTotal3mo": 5,
       "pctKept": 100.0,
       "topBackedOut": null,
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 23,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2660615",
@@ -681,7 +901,51 @@
       "loansStateTotal3mo": 24,
       "pctKept": 100.0,
       "topBackedOut": null,
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": "2026-11-14",
+        "firstFileSubmittedIsSample": true,
+        "turnTimePromise": "SAMPLE / PLACEHOLDER: 48-hour initial UW decision \u2014 not an agreed promise",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": false,
+        "daysSinceApproval": 34,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": "2026-11-14",
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "376205",
@@ -742,7 +1006,51 @@
       "loansStateTotal3mo": 897,
       "pctKept": 86.4,
       "topBackedOut": "NJ $8.4M, CA $6.7M, WA $6.1M, WV $5.8M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 21,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1416824",
@@ -803,7 +1111,51 @@
       "loansStateTotal3mo": 1520,
       "pctKept": 33.5,
       "topBackedOut": "CA $370.2M, NV $24.7M, WA $13.7M, MN $11.8M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 13,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1666459",
@@ -858,7 +1210,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 70,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2615315",
@@ -913,7 +1309,51 @@
       "loansStateTotal3mo": 4,
       "pctKept": 100.0,
       "topBackedOut": null,
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 33,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "161951",
@@ -968,7 +1408,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: Stuck Bridge file \u2014 pitch as \u201csend us the stuck file.\u201d Confirm Bridge is live for TPO before taking it in.",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 64,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "299131",
@@ -1031,7 +1515,51 @@
       "loansStateTotal3mo": 109,
       "pctKept": 54.9,
       "topBackedOut": "MD $13.6M, DC $1.0M, DE $0.5M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 5,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2349538",
@@ -1094,7 +1622,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 204,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "275599",
@@ -1149,7 +1721,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: Stuck HELOC file \u2014 pitch as \u201csend us the stuck file.\u201d Confirm HELOC is live for TPO before taking it in.",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 91,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1649216",
@@ -1204,7 +1820,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 85,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1815656",
@@ -1278,7 +1938,51 @@
       "loansStateTotal3mo": 651,
       "pctKept": 72.3,
       "topBackedOut": "WA $29.0M, MN $8.7M, CA $7.3M, NH $5.4M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 248,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "898812",
@@ -1333,7 +2037,51 @@
       "loansStateTotal3mo": 446,
       "pctKept": 59.5,
       "topBackedOut": "CA $53.0M, UT $6.8M, NV $2.4M, MD $1.0M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 1,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2323345",
@@ -1388,7 +2136,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 64,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1660690",
@@ -1449,7 +2241,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 42,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1532157",
@@ -1512,7 +2348,51 @@
       "loansStateTotal3mo": 46,
       "pctKept": 18.8,
       "topBackedOut": "CA $19.5M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 8,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2240466",
@@ -1573,7 +2453,51 @@
       "loansStateTotal3mo": 9,
       "pctKept": 100.0,
       "topBackedOut": null,
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 42,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2070941",
@@ -1628,7 +2552,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 70,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2142653",
@@ -1691,7 +2659,51 @@
       "loansStateTotal3mo": 113,
       "pctKept": 61.6,
       "topBackedOut": "CA $9.2M, WA $2.5M, MT $1.5M, MD $1.1M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 14,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2556362",
@@ -1746,7 +2758,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 85,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "9462",
@@ -1801,7 +2857,51 @@
       "loansStateTotal3mo": 30,
       "pctKept": 37.6,
       "topBackedOut": "NV $4.4M, CA $3.3M, UT $0.5M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 84,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1223",
@@ -1856,7 +2956,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 274,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2817705",
@@ -1917,7 +3061,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 70,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2436394",
@@ -1974,7 +3162,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: Stuck DPA file \u2014 pitch as \u201csend us the stuck file.\u201d Confirm DPA is live for TPO before taking it in.",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 113,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2273319",
@@ -2029,7 +3261,51 @@
       "loansStateTotal3mo": 951,
       "pctKept": 68.1,
       "topBackedOut": "CA $49.3M, UT $21.4M, WA $17.6M, NJ $6.7M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Ashley Dugan",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 42,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "1019911",
@@ -2084,7 +3360,51 @@
       "loansStateTotal3mo": 165,
       "pctKept": 86.5,
       "topBackedOut": "NJ $4.6M, MD $3.9M, CA $1.3M, DE $0.4M",
-      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": "2026-11-10",
+        "firstFileSubmittedIsSample": true,
+        "turnTimePromise": "SAMPLE / PLACEHOLDER: 48-hour initial UW decision / 24-hour condition review \u2014 not an agreed promise",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": false,
+        "daysSinceApproval": 84,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": "2026-11-10",
+            "updateSent": true,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     },
     {
       "id": "2600337",
@@ -2139,7 +3459,51 @@
       "loansStateTotal3mo": null,
       "pctKept": null,
       "topBackedOut": null,
-      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart."
+      "stateSplitNote": "State split pending. Source: RETR Loans tab by property state, last 3 months. Shop totals use the table sum (amounts rounded to $1,000), not the chart.",
+      "firstFile": {
+        "assignedAe": "Jim Janczy",
+        "targetScenario": "SAMPLE: FHA purchase, borrower-paid \u2014 lead program. The 11/17 borrower-paid comparison was about even with UWM. Do not lead with Conv or VA (those trailed on that run).",
+        "targetScenarioIsSample": true,
+        "firstFileSubmittedDate": null,
+        "firstFileSubmittedIsSample": false,
+        "turnTimePromise": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+        "uwContactName": "[UW CONTACT \u2014 PLACEHOLDER]",
+        "hasFundedGvcLoan": false,
+        "isQuiet": true,
+        "daysSinceApproval": 84,
+        "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+        "isSample": true,
+        "milestones": [
+          {
+            "code": "submitted",
+            "name": "Submitted",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "conditional_approval",
+            "name": "Conditional approval",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "ctc",
+            "name": "CTC",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          },
+          {
+            "code": "funded",
+            "name": "Funded",
+            "occurredOn": null,
+            "updateSent": false,
+            "isSample": true
+          }
+        ]
+      }
     }
   ],
   "contacts": [
@@ -35154,5 +36518,32 @@
       "retrProfile": "https://retr.app/LoanOfficer/Profile/1174296",
       "basis": "3-month RETR"
     }
-  ]
+  ],
+  "playbookMarkdown": "# AE first-file playbook\n\nPreview only. This page is a talk track for GVC wholesale AEs calling approved TPO shops that have not yet funded a GVC loan. Nothing here is sent, published, or a promise of price, credit, or compensation.\n\nToday, for day counts in the first-file tracker, is **November 18, 2026** (America/Indianapolis).\n\n## (a) Lead with the programs where GVC is truly competitive\n\nLead with **FHA, borrower-paid.** On the November 17, 2026 borrower-paid comparison (same Indiana / Hamilton 46032 scenarios as the November 16 lender-paid run), FHA was about even with UWM. That is the file to ask for first.\n\n**Do not lead with Conventional or VA.** On that same November 17 borrower-paid run, Conventional and VA trailed UWM. They can still be discussed if the broker brings them up, but they are not the opener.\n\n**Stuck-file tools \u2014 confirm live for TPO before you pitch them.** If a broker has a file they cannot place, ask them to send it. Do not treat the following as confirmed TPO programs until someone names them as live for wholesale:\n\n- **DPA** \u2014 confirm live for TPO. Pitch as \u201csend us the stuck file.\u201d\n- **HELOC** \u2014 confirm live for TPO. Pitch as \u201csend us the stuck file.\u201d\n- **Bridge** \u2014 confirm live for TPO. Pitch as \u201csend us the stuck file.\u201d\n\nThe November 17 snapshot is a pricing check from that day, not a guarantee that today\u2019s price will match UWM. Do not promise a beat or a match.\n\n## (b) The first-file promise\n\nEvery first file should come in with three things already named:\n\n1. **A named AE.** Use the AE already assigned on the roster (Jim Janczy or Ashley Dugan). Do not leave the shop wondering who owns the file.\n2. **A direct UW contact.** **[UW CONTACT \u2014 PLACEHOLDER]** Name a specific underwriter (or underwriting desk line) before the file is submitted. Do not invent a name in this preview.\n3. **An agreed turn time.** **[TURN TIME \u2014 PLACEHOLDER]** Agree it with underwriting, then tell the broker, before the file arrives. Do not quote a sample turn time as a live promise.\n\n**Incentives are a PLACEHOLDER pending Brandy and Kirk.** A UW fee waiver or a first-loan price boost may be considered later. Do not offer either one on the call. Do not promise compensation, exceptions, or a special price.\n\n## (c) Proactive milestone updates\n\nDo not wait for the broker to chase status. For each first file, log whether an update was sent to the broker at these milestones (yes / no):\n\n- Submitted\n- Conditional approval\n- CTC (clear to close)\n- Funded\n\nThis milestone list is a preview default, pending Brock. If a milestone has occurred and the update was not sent, that is the AE\u2019s next action. This preview does not send the update.\n\n## (d) Call script for quiet approved shops\n\nUse this when the shop is approved (or activated), has no funded GVC loan, and has not submitted a first file. Call the oldest approvals first. The specific scenario to open with is an **FHA purchase, borrower-paid.**\n\n> Hi [primary contact], this is [AE] at GVC Wholesale. You were approved on [approval date] \u2014 that\u2019s [N] days ago \u2014 and we have not seen a first file yet. I want to make the first one easy.\n>\n> If you have an FHA purchase shopping price this week, that is the file I would send us first. On our November 17 borrower-paid snapshot, FHA was about even with UWM. I would not lead with Conventional or VA; those trailed on that same check, and I will not oversell them.\n>\n> If you send it, I will be your named AE, I will give you a direct underwriter to call, and we will agree a turn time before the file comes in. I will also update you at submitted, conditional approval, CTC, and funded, so you are not chasing status.\n>\n> If you have a file that is stuck \u2014 DPA, a HELOC, or a bridge \u2014 send us that too. I need to confirm those programs are live for TPO before we take it in.\n>\n> I am not offering a fee waiver or a price bump on this call; those are still pending. What FHA purchase, or stuck file, is on your desk this week?\n\nFill in the real contact name, AE name, approval date, and days since approval from the roster. Leave the UW name and turn time blank until they are agreed. Do not add a comp promise to the script.\n\n## Preview notes\n\n- \u201cApproved but quiet\u201d in this preview means: stage is Approved or Activated, there is no funded GVC loan, and there is no first-file submitted date. Pending Brock\u2019s sign-off on that definition.\n- Approval dates and AE assignments are taken from the approved list, including Casey\u2019s nine shops. Target scenarios, turn-time text, the UW contact placeholder, sample first-file dates, and sample milestone yes/no flags that are not on file are labeled SAMPLE or PLACEHOLDER in the tracker.\n- This playbook does not change the live roster and does not send email or texts.\n",
+  "playbookHtml": "<h1>AE first-file playbook</h1>\n<p>Preview only. This page is a talk track for GVC wholesale AEs calling approved TPO shops that have not yet funded a GVC loan. Nothing here is sent, published, or a promise of price, credit, or compensation.</p>\n<p>Today, for day counts in the first-file tracker, is <strong>November 18, 2026</strong> (America/Indianapolis).</p>\n<h2>(a) Lead with the programs where GVC is truly competitive</h2>\n<p>Lead with <strong>FHA, borrower-paid.</strong> On the November 17, 2026 borrower-paid comparison (same Indiana / Hamilton 46032 scenarios as the November 16 lender-paid run), FHA was about even with UWM. That is the file to ask for first.</p>\n<p><strong>Do not lead with Conventional or VA.</strong> On that same November 17 borrower-paid run, Conventional and VA trailed UWM. They can still be discussed if the broker brings them up, but they are not the opener.</p>\n<p><strong>Stuck-file tools \u2014 confirm live for TPO before you pitch them.</strong> If a broker has a file they cannot place, ask them to send it. Do not treat the following as confirmed TPO programs until someone names them as live for wholesale:</p>\n<ul>\n<li><strong>DPA</strong> \u2014 confirm live for TPO. Pitch as \u201csend us the stuck file.\u201d</li>\n<li><strong>HELOC</strong> \u2014 confirm live for TPO. Pitch as \u201csend us the stuck file.\u201d</li>\n<li><strong>Bridge</strong> \u2014 confirm live for TPO. Pitch as \u201csend us the stuck file.\u201d</li>\n</ul>\n<p>The November 17 snapshot is a pricing check from that day, not a guarantee that today\u2019s price will match UWM. Do not promise a beat or a match.</p>\n<h2>(b) The first-file promise</h2>\n<p>Every first file should come in with three things already named:</p>\n<p>1. <strong>A named AE.</strong> Use the AE already assigned on the roster (Jim Janczy or Ashley Dugan). Do not leave the shop wondering who owns the file.</p>\n<p>2. <strong>A direct UW contact.</strong> <strong>[UW CONTACT \u2014 PLACEHOLDER]</strong> Name a specific underwriter (or underwriting desk line) before the file is submitted. Do not invent a name in this preview.</p>\n<p>3. <strong>An agreed turn time.</strong> <strong>[TURN TIME \u2014 PLACEHOLDER]</strong> Agree it with underwriting, then tell the broker, before the file arrives. Do not quote a sample turn time as a live promise.</p>\n<p><strong>Incentives are a PLACEHOLDER pending Brandy and Kirk.</strong> A UW fee waiver or a first-loan price boost may be considered later. Do not offer either one on the call. Do not promise compensation, exceptions, or a special price.</p>\n<h2>(c) Proactive milestone updates</h2>\n<p>Do not wait for the broker to chase status. For each first file, log whether an update was sent to the broker at these milestones (yes / no):</p>\n<ul>\n<li>Submitted</li>\n<li>Conditional approval</li>\n<li>CTC (clear to close)</li>\n<li>Funded</li>\n</ul>\n<p>This milestone list is a preview default, pending Brock. If a milestone has occurred and the update was not sent, that is the AE\u2019s next action. This preview does not send the update.</p>\n<h2>(d) Call script for quiet approved shops</h2>\n<p>Use this when the shop is approved (or activated), has no funded GVC loan, and has not submitted a first file. Call the oldest approvals first. The specific scenario to open with is an <strong>FHA purchase, borrower-paid.</strong></p>\n<blockquote>\n<p>Hi [primary contact], this is [AE] at GVC Wholesale. You were approved on [approval date] \u2014 that\u2019s [N] days ago \u2014 and we have not seen a first file yet. I want to make the first one easy.</p>\n<p>If you have an FHA purchase shopping price this week, that is the file I would send us first. On our November 17 borrower-paid snapshot, FHA was about even with UWM. I would not lead with Conventional or VA; those trailed on that same check, and I will not oversell them.</p>\n<p>If you send it, I will be your named AE, I will give you a direct underwriter to call, and we will agree a turn time before the file comes in. I will also update you at submitted, conditional approval, CTC, and funded, so you are not chasing status.</p>\n<p>If you have a file that is stuck \u2014 DPA, a HELOC, or a bridge \u2014 send us that too. I need to confirm those programs are live for TPO before we take it in.</p>\n<p>I am not offering a fee waiver or a price bump on this call; those are still pending. What FHA purchase, or stuck file, is on your desk this week?</p>\n</blockquote>\n<p>Fill in the real contact name, AE name, approval date, and days since approval from the roster. Leave the UW name and turn time blank until they are agreed. Do not add a comp promise to the script.</p>\n<h2>Preview notes</h2>\n<ul>\n<li>\u201cApproved but quiet\u201d in this preview means: stage is Approved or Activated, there is no funded GVC loan, and there is no first-file submitted date. Pending Brock\u2019s sign-off on that definition.</li>\n<li>Approval dates and AE assignments are taken from the approved list, including Casey\u2019s nine shops. Target scenarios, turn-time text, the UW contact placeholder, sample first-file dates, and sample milestone yes/no flags that are not on file are labeled SAMPLE or PLACEHOLDER in the tracker.</li>\n<li>This playbook does not change the live roster and does not send email or texts.</li>\n</ul>",
+  "firstFileMeta": {
+    "quietRule": "Approved but quiet (preview rule, pending Brock): the shop is at Approved or Activated, has no funded GVC loan, and has no first-file submitted date. Sorted by days since approval, oldest first, so AEs call those shops first. Days are counted from the shop's approved date to today, November 18, 2026.",
+    "today": "2026-11-18",
+    "turnTimePlaceholder": "[TURN TIME \u2014 PLACEHOLDER, agree with UW before quoting]",
+    "uwContactPlaceholder": "[UW CONTACT \u2014 PLACEHOLDER]",
+    "incentiveNote": "PLACEHOLDER pending Brandy and Kirk: a UW fee waiver or a first-loan price boost may be considered later. Do not offer either. No comp promises.",
+    "milestoneList": [
+      {
+        "code": "submitted",
+        "name": "Submitted"
+      },
+      {
+        "code": "conditional_approval",
+        "name": "Conditional approval"
+      },
+      {
+        "code": "ctc",
+        "name": "CTC"
+      },
+      {
+        "code": "funded",
+        "name": "Funded"
+      }
+    ]
+  }
 }

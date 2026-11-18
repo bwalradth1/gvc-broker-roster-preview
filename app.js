@@ -1,7 +1,7 @@
 /* GVC Broker Roster CRM — PREVIEW ONLY. localStorage is not the system of record. */
 (function () {
   const STORAGE_KEY = "gvc-broker-roster-crm-preview-v1";
-  const TODAY = (window.BROKER_ROSTER_SEED && window.BROKER_ROSTER_SEED.meta.today) || "2026-11-17";
+  const TODAY = (window.BROKER_ROSTER_SEED && window.BROKER_ROSTER_SEED.meta.today) || "2026-11-18";
   const TZ = (window.BROKER_ROSTER_SEED && window.BROKER_ROSTER_SEED.meta.timezoneLabel) || "ET (America/Indianapolis)";
 
   function clone(o) { return JSON.parse(JSON.stringify(o)); }
@@ -21,7 +21,15 @@
     if (seed.meta) {
       if (seed.meta.licensedStatesNote) s.meta.licensedStatesNote = seed.meta.licensedStatesNote;
       if (seed.meta.stateSplitSource) s.meta.stateSplitSource = seed.meta.stateSplitSource;
+      if (seed.meta.today) s.meta.today = seed.meta.today;
     }
+    s.brokers.forEach(b => {
+      const src = by[b.companyNmls];
+      if (src && src.firstFile) b.firstFile = clone(src.firstFile);
+    });
+    if (seed.playbookHtml) s.playbookHtml = seed.playbookHtml;
+    if (seed.playbookMarkdown) s.playbookMarkdown = seed.playbookMarkdown;
+    if (seed.firstFileMeta) s.firstFileMeta = clone(seed.firstFileMeta);
     return s;
   }
   function loadState() {
@@ -46,6 +54,8 @@
     activeView: "all",
     sort: { key: "name", dir: 1 },
     detailTab: "overview",
+    firstFileMode: "quiet",
+    firstFileAe: "",
     toastTimer: null
   };
 
@@ -96,6 +106,46 @@
   function kpiVolume(b) {
     if (hasLicensedKpi(b) && b.volumeLicensed3mo != null) return Number(b.volumeLicensed3mo) || 0;
     return b.volume3mo || b.volumeYtd || 0;
+  }
+  function firstFileOf(b) { return b.firstFile || {}; }
+  function daysSinceApproval(b) {
+    const ff = firstFileOf(b);
+    if (ff.daysSinceApproval != null) return ff.daysSinceApproval;
+    if (!b.initialApprovalDate) return null;
+    const a = new Date(b.initialApprovalDate + "T00:00:00");
+    const t = new Date(TODAY + "T00:00:00");
+    return Math.round((t - a) / 86400000);
+  }
+  function isFirstFileShop(b) {
+    const st = b.stage;
+    if (st !== "approved" && st !== "activated") return false;
+    return !firstFileOf(b).hasFundedGvcLoan;
+  }
+  function isQuietShop(b) {
+    const ff = firstFileOf(b);
+    if (ff.isQuiet != null) return !!ff.isQuiet;
+    return isFirstFileShop(b) && !ff.firstFileSubmittedDate;
+  }
+  function sampleBadge(on) {
+    return on ? `<span class="pill sample">SAMPLE</span>` : "";
+  }
+  function placeholderBadge() {
+    return `<span class="pill placeholder">PLACEHOLDER</span>`;
+  }
+  function milestonePills(ff) {
+    return (ff.milestones || []).map(m => {
+      const sent = m.updateSent ? "Yes" : "No";
+      const cls = m.updateSent ? "ok" : "warn";
+      const when = m.occurredOn ? " · " + fmtDate(m.occurredOn) : " · not yet";
+      return `<span class="pill ${cls} ms-pill">${esc(m.name)}: ${sent}${when}${m.isSample ? " · SAMPLE" : ""}</span>`;
+    }).join("");
+  }
+  function milestoneCompact(ff) {
+    return `<div class="ms-grid">${(ff.milestones || []).map(m => {
+      const sent = m.updateSent ? "Yes" : "No";
+      const cls = m.updateSent ? "ok" : "warn";
+      return `<div class="ms-cell"><span class="ms-name">${esc(m.name)}</span><span class="pill ${cls}">${sent}</span>${m.isSample ? `<span class="pill sample">SAMPLE</span>` : ""}</div>`;
+    }).join("")}</div>`;
   }
   function fmtDate(iso) {
     if (!iso) return "—";
@@ -203,6 +253,12 @@
     if (view === "broker" && id) renderDetail(id);
     else if (view === "roster") renderRoster();
     else if (view === "due") renderDue();
+    else if (view === "first-file") {
+      if (id === "all") ui.firstFileMode = "all";
+      else ui.firstFileMode = "quiet";
+      renderFirstFile();
+    }
+    else if (view === "playbook") renderPlaybook();
     else renderPipeline();
   }
 
@@ -638,6 +694,7 @@
           ${hasLicensedKpi(b) ? "" : `<div class="kpi"><div class="k">Activity</div><div class="v">${acts.length}</div><div class="s">Notes and preview-seeded log rows</div></div>`}
         </div>
         ${splitPanel}
+        ${firstFilePanel(b)}
         <div class="tabs">
           ${[["overview", "Overview"], ["contacts", "Contacts"], ["production", "Production"], ["activity", "Activity log"], ["reminders", "Reminders"]].map(([id, l]) =>
             `<button type="button" class="tab ${tab === id ? "active" : ""}" data-tab="${id}">${l}</button>`).join("")}
@@ -653,6 +710,126 @@
     if (rf) rf.addEventListener("submit", onAddReminder);
   }
 
+
+  function firstFilePanel(b) {
+    if (!isFirstFileShop(b) && !firstFileOf(b).hasFundedGvcLoan) return "";
+    const ff = firstFileOf(b);
+    const days = daysSinceApproval(b);
+    const quiet = isQuietShop(b);
+    const submitted = ff.firstFileSubmittedDate
+      ? `${fmtDate(ff.firstFileSubmittedDate)} ${sampleBadge(ff.firstFileSubmittedIsSample)}`
+      : "— not submitted";
+    return `<div class="panel split-panel first-file-panel" style="margin:0 0 16px">
+      <h3>First-file tracker ${quiet ? `<span class="pill warn">Approved but quiet</span>` : `<span class="pill info">First file in process</span>`} ${sampleBadge(true)}</h3>
+      <p>Assigned AE: <strong>${esc(ff.assignedAe || b.ae || "—")}</strong> · Days since approval: <strong>${days == null ? "—" : days}</strong> (from ${fmtDate(b.initialApprovalDate)} to ${fmtDate(TODAY)}).</p>
+      <p>Target scenario or program to pitch: ${esc(ff.targetScenario || "—")} ${sampleBadge(ff.targetScenarioIsSample)}</p>
+      <p>First file submitted: ${submitted}</p>
+      <p>Agreed turn-time promise: ${esc(ff.turnTimePromise || "—")} ${placeholderBadge()}</p>
+      <p>Direct UW contact: ${esc(ff.uwContactName || "—")} ${placeholderBadge()}</p>
+      <p class="muted">Milestone update sent to the broker (yes / no):</p>
+      ${milestoneCompact(ff)}
+      <p class="muted" style="margin-top:8px">${esc(ff.incentiveNote || "")}</p>
+    </div>`;
+  }
+
+  function renderFirstFile() {
+    const mode = ui.firstFileMode === "all" ? "all" : "quiet";
+    let rows = state.brokers.filter(b => mode === "all" ? isFirstFileShop(b) : isQuietShop(b));
+    if (ui.firstFileAe) rows = rows.filter(b => b.ae === ui.firstFileAe);
+    rows = rows.slice().sort((a, b) => {
+      const da = daysSinceApproval(a), db = daysSinceApproval(b);
+      if (db == null && da == null) return a.name.localeCompare(b.name);
+      if (da == null) return 1;
+      if (db == null) return -1;
+      if (db !== da) return db - da;
+      return a.name.localeCompare(b.name);
+    });
+    const meta = state.firstFileMeta || (window.BROKER_ROSTER_SEED && window.BROKER_ROSTER_SEED.firstFileMeta) || {};
+    const quietCount = state.brokers.filter(isQuietShop).length;
+    const allCount = state.brokers.filter(isFirstFileShop).length;
+    const inProcess = allCount - quietCount;
+    $("#app").innerHTML = `
+      <div class="wrap" data-view="first-file" data-shot="first-file">
+        <div class="page-head">
+          <h2>${mode === "quiet" ? "Approved but quiet" : "First-file tracker"}</h2>
+          <p class="muted">${esc(meta.quietRule || "")} Approval dates and AEs are real, including Casey’s nine shops. Target scenarios, sample first-file dates, milestone yes/no flags, the UW contact, and the turn-time promise are SAMPLE or PLACEHOLDER where no real data is on file. Incentives are a PLACEHOLDER pending Brandy and Kirk — do not offer them. No comp promises.</p>
+        </div>
+        <div class="views">
+          <a class="view-chip ${mode === "quiet" ? "active" : ""}" href="#/first-file">Approved but quiet (${quietCount})</a>
+          <a class="view-chip ${mode === "all" ? "active" : ""}" href="#/first-file/all">All first files, no funded GVC loan (${allCount})</a>
+          <a class="view-chip" href="#/playbook">AE playbook</a>
+        </div>
+        <div class="filter-bar">
+          <label class="muted">Assigned AE
+            <select id="ff-ae">
+              <option value="">All AEs</option>
+              ${(state.aes || []).map(a => `<option value="${esc(a)}" ${ui.firstFileAe === a ? "selected" : ""}>${esc(a)}</option>`).join("")}
+            </select>
+          </label>
+          <span class="muted">${rows.length} shops · ${inProcess} SAMPLE first files in process · 0 funded · oldest approvals first</span>
+        </div>
+        <div class="table-wrap" data-shot="quiet-table">
+          <table class="first-file-table">
+            <thead>
+              <tr>
+                <th>Shop</th>
+                <th>Assigned AE</th>
+                <th>Approved</th>
+                <th class="num">Days since approval</th>
+                <th>Target scenario / program ${sampleBadge(true)}</th>
+                <th>First file submitted</th>
+                <th>Turn-time promise ${placeholderBadge()}</th>
+                <th>Milestone update sent to broker ${sampleBadge(true)}</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map(b => {
+                const ff = firstFileOf(b);
+                const days = daysSinceApproval(b);
+                const submitted = ff.firstFileSubmittedDate
+                  ? `${fmtDate(ff.firstFileSubmittedDate)} ${sampleBadge(ff.firstFileSubmittedIsSample)}`
+                  : "—";
+                return `<tr data-nmls="${esc(b.companyNmls)}">
+                  <td><strong>${esc(b.name)}</strong><div class="faint">NMLS ${esc(b.companyNmls)} · ${esc(b.city || "")}, ${esc(b.state || "")} · ${esc((b.stage || "").toUpperCase())}</div></td>
+                  <td>${esc(ff.assignedAe || b.ae || "—")}</td>
+                  <td>${fmtDate(b.initialApprovalDate)}</td>
+                  <td class="num"><strong>${days == null ? "—" : days}</strong></td>
+                  <td>${esc(ff.targetScenario || "—")} ${sampleBadge(ff.targetScenarioIsSample)}</td>
+                  <td>${submitted}</td>
+                  <td>${esc(ff.turnTimePromise || "—")} ${placeholderBadge()}</td>
+                  <td>${milestoneCompact(ff)}</td>
+                </tr>`;
+              }).join("")}
+            </tbody>
+          </table>
+        </div>
+        ${aboutHtml()}
+      </div>`;
+    bindCommon();
+    const sel = $("#ff-ae");
+    if (sel) sel.addEventListener("change", () => {
+      ui.firstFileAe = sel.value;
+      renderFirstFile();
+    });
+  }
+
+  function renderPlaybook() {
+    const html = (window.BROKER_ROSTER_SEED && window.BROKER_ROSTER_SEED.playbookHtml) || state.playbookHtml || "<p>Playbook is missing.</p>";
+    $("#app").innerHTML = `
+      <div class="wrap" data-view="playbook" data-shot="playbook">
+        <div class="page-head">
+          <p class="muted">Preview only. This is the AE talk track for first files and quiet approved shops. It does not send anything, and it is not a price, credit, or compensation promise.</p>
+        </div>
+        <div class="views">
+          <a class="view-chip" href="#/first-file">Approved but quiet</a>
+          <a class="view-chip" href="#/first-file/all">First-file tracker</a>
+          <a class="view-chip active" href="#/playbook">AE playbook</a>
+        </div>
+        <article class="panel playbook">${html}</article>
+      </div>`;
+    bindCommon();
+  }
+
   function aboutHtml() {
     const m = state.meta || {};
     return `<div class="about">
@@ -660,6 +837,7 @@
       <p>${esc(m.seedingRule)}</p>
       <p style="margin-top:8px">${esc(m.liveDeskNote)}</p>
       <p style="margin-top:8px">${esc((m.licensedStatesNote || "") + " " + (m.stateSplitSource || ""))}</p>
+      <p style="margin-top:8px">The first-file tracker and AE playbook are preview tools for shops at Approved or Activated with no funded GVC loan. ${(state.firstFileMeta && state.firstFileMeta.quietRule) || ""}</p>
       <p style="margin-top:8px">localStorage key <code>${STORAGE_KEY}</code> is for this preview only. It is not the system of record. The ASP.NET MVC module uses on-prem MSSQL through Entity Framework. Today is ${fmtDate(TODAY)} ${TZ}.</p>
     </div>`;
   }
